@@ -6,11 +6,11 @@ import pandas as pd
 app = Flask(__name__)
 
 # Charger le modèle et les données
-MODELS_PATH = "./models/"
-DATA_PATH = "./data/"
-model = joblib.load(MODELS_PATH + "best_model.joblib")
-cal_model = joblib.load(MODELS_PATH + "cal_best_model.joblib")
-data = joblib.load (DATA_PATH + "test_data.joblib")
+# MODELS_PATH = "./models/"
+# DATA_PATH = "./data/"
+# model = joblib.load(MODELS_PATH + "best_model.joblib")
+# cal_model = joblib.load(MODELS_PATH + "cal_best_model.joblib")
+# data = joblib.load (DATA_PATH + "test_data.joblib")
 
 # def get_shap(client_data) :
 
