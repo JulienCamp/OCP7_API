@@ -30,6 +30,10 @@ data = joblib.load (DATA_PATH + "test_data.joblib")
     
 #     return shap_values_list
 
+@app.route("/")
+def index():
+    return "API loaded"
+
 @app.route('/api/prediction', methods=['POST'])
 def prediction():
     # Récupérer les données de la requête POST
