@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 import joblib
 import pandas as pd
+import os
 #import shap
 
 app = Flask(__name__)
@@ -8,6 +9,19 @@ app = Flask(__name__)
 # Charger le modèle et les données
 # MODELS_PATH = "./models/"
 # DATA_PATH = "./data/"
+
+path = os.path.join('models', 'best_model.joblib')
+with open(path, 'rb') as file:
+    model = joblib.load(file)
+
+path = os.path.join('models', 'cal_best_model.joblib')
+with open(path, 'rb') as file:
+    cal_model = joblib.load(file)
+
+ath = os.path.join('data', 'test_data.joblib')
+with open(path, 'rb') as file:
+    data = joblib.load(file)
+
 # model = joblib.load(MODELS_PATH + "best_model.joblib")
 # cal_model = joblib.load(MODELS_PATH + "cal_best_model.joblib")
 # data = joblib.load (DATA_PATH + "test_data.joblib")
