@@ -34,7 +34,7 @@ data = joblib.load (DATA_PATH + "test_data.joblib")
 def index():
     return "API loaded"
 
-@app.route('/api/prediction', methods=['POST'])
+@app.route('/api/prediction/', methods=['POST'])
 def prediction():
     # Récupérer les données de la requête POST
     client_id = request.json['client_id']
