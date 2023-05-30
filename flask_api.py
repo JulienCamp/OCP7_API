@@ -18,7 +18,7 @@ path = os.path.join('models', 'cal_best_model.joblib')
 with open(path, 'rb') as file:
     cal_model = joblib.load(file)
 
-ath = os.path.join('data', 'test_data.joblib')
+path = os.path.join('data', 'test_data.joblib')
 with open(path, 'rb') as file:
     data = joblib.load(file)
 
