@@ -48,7 +48,7 @@ with open(path, 'rb') as file:
 def index():
     return "API loaded"
 
-@app.route('/api/prediction/', methods=['POST'])
+@app.route('/api/prediction', methods=['POST'])
 def prediction():
     # Récupérer les données de la requête POST
     client_id = request.json['client_id']
@@ -68,7 +68,7 @@ def prediction():
     print("prediction=" , prediction[0])
     # Renvoyer la prédiction en tant que réponse JSON
     return jsonify({'prediction': str(prediction[0]),
-                    'confidence' : str(confidence[0][1]),
+                    'confidence' : str(confidence[0][1])
                     #'shap_values' : shap_values
                     })
     
