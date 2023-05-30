@@ -50,12 +50,15 @@ def index():
 
 @app.route('/api/prediction', methods=['POST'])
 def prediction():
-    # Récupérer les données de la requête POST
+    # Get the POST request data
     client_id = request.json['client_id']
     model_type = request.json['model_type']
+    credit_amount = request.json['credit_amount']
     
     client_data = data[data["SK_ID_CURR"] == client_id]
-    # Effectuer la prédiction
+    client_data['AMT_CREDIT'] = credit_amount
+
+    # Make the prediction
     if model_type == "default" :
         prediction = model.predict(client_data)
         confidence = model.predict_proba(client_data)
@@ -66,7 +69,8 @@ def prediction():
 #       shap_values = get_shap(client_data)
     print("dbg3")
     print("prediction=" , prediction[0])
-    # Renvoyer la prédiction en tant que réponse JSON
+
+    # Return the prediction as JSON
     return jsonify({'prediction': str(prediction[0]),
                     'confidence' : str(confidence[0][1])
                     #'shap_values' : shap_values
