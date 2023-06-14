@@ -6,7 +6,7 @@ API flaks déployée à l'adresse suivante :
 https://ocp7flaskapi.herokuapp.com/
 
 API pouvant être interrogée via requête JSON et renvoyant la prédiction sous format JSON.  
-Endpoint : /api/prediction
+Endpoint : **/api/prediction**  
 Format JSON pour la requête post :  
 * 'client_id': numéro d'identification du client  
 * 'model_type': type de modèle à utiliser ("default" or "calibrated")  
